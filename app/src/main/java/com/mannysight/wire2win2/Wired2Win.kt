@@ -2,6 +2,7 @@ package com.mannysight.wire2win2
 
 import android.app.Activity
 import android.app.Application
+import com.mannysight.wire2win2.di.component.DaggerAppComponent
 import com.mannysight.wire2win2.di.modules.AppModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -16,7 +17,7 @@ class Wired2Win : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-//        DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
+        DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
 
     }
 
