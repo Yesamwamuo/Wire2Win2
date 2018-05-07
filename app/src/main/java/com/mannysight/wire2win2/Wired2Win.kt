@@ -17,7 +17,10 @@ class Wired2Win : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-        DaggerAppComponent.builder().appModule(AppModule(this)).build().inject(this)
+        DaggerAppComponent.builder()
+                .application(this)
+                .build()
+                .inject(this)
 
     }
 

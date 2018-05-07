@@ -16,5 +16,11 @@ import javax.inject.Singleton
 )
 interface AppComponent {
 
-    fun inject(app: Application)
+    @Component.Builder
+    interface Builder {
+        @BindsInstance fun application(app: Application): Builder
+        fun build(): AppComponent
+    }
+
+    fun inject(app: Wired2Win)
 }

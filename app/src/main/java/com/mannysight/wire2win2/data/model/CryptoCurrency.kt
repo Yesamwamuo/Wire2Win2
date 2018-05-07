@@ -12,7 +12,7 @@ data class Cryptocurrency(
 
         @Json(name = "id")
         @PrimaryKey
-        val id: Int,
+        val id: String,
 
         @Json(name = "name")
         val name: String? = null,
@@ -42,7 +42,7 @@ data class Cryptocurrency(
         val totalSupply: String = "",
 
         @Json(name = "max_supply")
-        val maxSupply: String = "",
+        val maxSupply: String? = null,
 
         @Json(name = "percent_change_1h")
         val percentChange1h: String = "",
